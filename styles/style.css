@@ -3,16 +3,17 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1180px) 1fr;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 header {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  /* Nest a grid in header to make content fixed width */
+  /* header is not treated as part of page grid because of position: fixed */
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1180px) 1fr;
   border-bottom: 1px solid #EFEFEF;
+  background-color: #FFFFFF;
+  position: fixed;
+  width: 100%;
 }
 
 header .header-content {
@@ -44,7 +45,6 @@ header .logotype {
 
 img.profile {
   border-radius: 50%;
-  margin-top: 64px;
 }
 
 h1 {
@@ -67,8 +67,9 @@ h1 a {
 .hero {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-top: 128px;
 }
 
 .hero h1 {
@@ -87,8 +88,8 @@ h1 a {
 main {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 main h2 {
@@ -103,8 +104,8 @@ main h2 {
 footer {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 4;
-  grid-row-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
   border-top: 1px solid #C2C2C2;
   display: flex;
   justify-content: space-between;
