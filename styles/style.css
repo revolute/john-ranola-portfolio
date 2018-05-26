@@ -15,7 +15,7 @@ body {
 
 .about article {
   display: grid;
-  grid-column-gap: 56px;
+  grid-column-gap: 32px;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
   grid-template-areas:
@@ -97,6 +97,14 @@ p, main {
   line-height: 24px;
 }
 
+main p:first-child {
+  margin-top: 0;
+}
+
+p + h2 {
+  margin-top: 32px;
+}
+
 .hero, main {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -127,7 +135,7 @@ hr {
 }
 
 .about hr {
-  margin: 48px 0 56px 0;
+  margin: 16px 0 32px 0;
 }
 
 .home main {
@@ -154,6 +162,11 @@ hr {
   line-height: 40px;
 }
 
+.about .portrait img {
+  width: 100%;
+  height: auto;
+}
+
 .byline,
 .about main h2 {
   font-weight: 400;
@@ -162,7 +175,7 @@ hr {
 }
 
 .byline {
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .employment-history {
@@ -206,7 +219,19 @@ footer ul li {
   padding-bottom: 24px;
 }
 
-@media only screen and (min-width: 1180px) {
+@media only screen and (min-width: 768px) {
+  .about article {
+    grid-template-columns: 33% 1fr;
+    grid-template-areas:
+      "page-title page-title"
+      "portrait biography";
+  }
+
+  .about .portrait img {
+    width: 100%;
+    height: auto;
+  }
+
   .home .hero h1 {
     width: 680px;
     font-size: 24px;
@@ -217,11 +242,8 @@ footer ul li {
     margin-bottom: 72px;
   }
 
-  .about article {
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "page-title page-title"
-      "portrait biography";
+  .about hr {
+    margin: 48px 0 56px 0;
   }
 
   .about main h1 {
@@ -235,9 +257,17 @@ footer ul li {
     line-height: 40px;
   }
 
+  .byline {
+    margin-top: 16px;
+  }
+
   p, main {
     font-size: 20px;
     line-height: 32px;
+  }
+
+  p + h2 {
+    margin-top: 64px;
   }
 
   footer {
@@ -256,5 +286,17 @@ footer ul li {
   footer ul li a {
     display: inline-block;
     padding: 24px;
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  .about article {
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 56px;
+  }
+
+  .about .portrait img {
+    width: 444px;
+    height: 616px;
   }
 }
