@@ -79,9 +79,7 @@ img.profile {
 
 h1 {
   margin: 0;
-  font-size: 24px;
   font-weight: 400;
-  line-height: 40px;
   color: #333333;
 }
 
@@ -113,6 +111,8 @@ p, main {
 .home .hero h1 {
   margin-top: 36px;
   width: 100%;
+  font-size: 20px;
+  line-height: 32px;
 }
 
 hr {
@@ -123,7 +123,7 @@ hr {
 }
 
 .home .hero hr {
-  margin: 16px 0 72px 0;
+  margin: 16px 0 48px 0;
 }
 
 .about hr {
@@ -136,12 +136,12 @@ hr {
 }
 
 .home main h2 {
-  margin-top: 72px;
   text-transform: uppercase;
   color: #888888;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
+  margin: 0 0 16px 0;
 }
 
 .about main {
@@ -209,6 +209,12 @@ footer ul li {
 @media only screen and (min-width: 1180px) {
   .home .hero h1 {
     width: 680px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .home .hero hr {
+    margin-bottom: 72px;
   }
 
   .about article {
