@@ -18,27 +18,22 @@ body {
   grid-column-gap: 56px;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
+  grid-template-areas:
+    "page-title"
+    "biography"
+    "portrait";
 }
 
 .about article .page-title {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: page-title;
 }
 
 .about article .portrait {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-area: portrait;
 }
 
 .about article .biography {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-area: biography;
 }
 
 header {
@@ -218,6 +213,9 @@ footer ul li {
 
   .about article {
     grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "page-title page-title"
+      "portrait biography";
   }
 
   .about main h1 {
