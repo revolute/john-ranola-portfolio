@@ -1,17 +1,32 @@
+/*------------------------------------*\
+  #BASE
+\*------------------------------------*/
+
 body {
   font-family: 'Roboto';
   min-height: 100vh;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+.page {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1180px) 1fr;
-}
-
-.home {
-  grid-template-rows: auto 1fr auto;
-}
-
-.about {
   grid-template-rows: 1fr auto;
+  grid-template-areas:
+    ". main ."
+    ". footer .";
 }
+
+main {
+  grid-area: main;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
 
 .about article {
   display: grid;
@@ -36,7 +51,7 @@ body {
   grid-area: biography;
 }
 
-header {
+.header {
   /* header is not treated as part of page grid because of position: fixed */
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1180px) 1fr;
@@ -46,7 +61,7 @@ header {
   width: 100%;
 }
 
-header .header-content {
+.header__content {
   grid-column-start: 2;
   grid-column-end: 3;
   display: flex;
@@ -54,7 +69,7 @@ header .header-content {
   align-items: center;
 }
 
-header nav a {
+.header__nav-link {
   padding: 20px 0;
   margin: 0 10px;
   display: inline-block;
@@ -62,12 +77,12 @@ header nav a {
   font-weight: 300;
 }
 
-header nav a.selected {
+.header__nav-link--selected {
   border-bottom: 4px solid #1D00FF;
   font-weight: 500;
 }
 
-header .logotype {
+.header__logotype {
   font-weight: 800;
   font-size: 20px;
   color: #5F5F5F;
@@ -105,18 +120,11 @@ p + h2 {
   margin-top: 32px;
 }
 
-.hero, main {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.home .hero {
-  grid-row-start: 1;
-  grid-row-end: 2;
+.hero {
   margin-top: 128px;
 }
 
-.home .hero h1 {
+.hero h1 {
   margin-top: 36px;
   width: 100%;
   font-size: 20px;
@@ -138,12 +146,7 @@ hr {
   margin: 16px 0 32px 0;
 }
 
-.home main {
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-
-.home main h2 {
+.works h2 {
   text-transform: uppercase;
   color: #888888;
   font-size: 16px;
@@ -193,10 +196,7 @@ hr {
 }
 
 footer {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-area: footer;
   border-top: 1px solid #C2C2C2;
   display: flex;
   justify-content: space-between;
@@ -232,13 +232,13 @@ footer ul li {
     height: auto;
   }
 
-  .home .hero h1 {
+  .hero h1 {
     width: 680px;
     font-size: 24px;
     line-height: 40px;
   }
 
-  .home .hero hr {
+  .hero hr {
     margin-bottom: 72px;
   }
 
