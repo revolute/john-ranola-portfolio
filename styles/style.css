@@ -7,6 +7,61 @@ body {
   min-height: 100vh;
 }
 
+p, li {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 32px 0;
+}
+
+hr {
+  width: 32px;
+  height: 3px;
+  background-color: #D8D8D8;
+  border: 0;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 700;
+  color: #333333;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h2,
+.byline {
+  margin: 32px 0 16px 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+a {
+  color: #333333;
+  border-bottom: 1px solid #333333;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  p, li {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  h2,
+  .byline {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
@@ -20,6 +75,10 @@ body {
     ". footer .";
 }
 
+.page--about main {
+  margin-top: 104px;
+}
+
 main {
   grid-area: main;
 }
@@ -28,7 +87,7 @@ main {
   #COMPONENTS
 \*------------------------------------*/
 
-.about article {
+.about-article {
   display: grid;
   grid-column-gap: 32px;
   grid-template-columns: auto;
@@ -39,17 +98,68 @@ main {
     "portrait";
 }
 
-.about article .page-title {
+.about-article__title {
   grid-area: page-title;
 }
 
-.about article .portrait {
+.about-article__portrait {
   grid-area: portrait;
 }
 
-.about article .biography {
+.about-article__biography {
   grid-area: biography;
 }
+
+.about-article hr {
+  margin: 16px 0 32px 0;
+}
+
+.about-article__portrait img {
+  width: 100%;
+  height: auto;
+}
+
+.byline {
+  margin-top: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-article {
+    grid-template-columns: 33% 1fr;
+    grid-template-areas:
+      "page-title page-title"
+      "portrait biography";
+  }
+
+  .about-article__portrait img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-article hr {
+    margin: 48px 0 56px 0;
+  }
+
+  .byline {
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  .about-article {
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 56px;
+  }
+
+  .about-article__portrait img {
+    width: 444px;
+    height: 616px;
+  }
+}
+
+/**
+ * #Header
+ */
 
 .header {
   /* header is not treated as part of page grid because of position: fixed */
@@ -74,6 +184,7 @@ main {
   margin: 0 10px;
   display: inline-block;
   text-decoration: none;
+  border-bottom: none;
   font-weight: 300;
 }
 
@@ -88,63 +199,48 @@ main {
   color: #5F5F5F;
 }
 
-img.profile {
-  border-radius: 50%;
-}
-
-h1 {
-  margin: 0;
-  font-weight: 400;
-  color: #333333;
-}
-
-a {
-  color: #333333;
-}
-
-h1 a, p a {
-  border-bottom: 1px solid #333333;
-  text-decoration: none;
-}
-
-p, main {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-main p:first-child {
-  margin-top: 0;
-}
-
-p + h2 {
-  margin-top: 32px;
-}
+/**
+ * #Hero
+ */
 
 .hero {
   margin-top: 128px;
 }
 
-.hero h1 {
+.hero__heading {
   margin-top: 36px;
   width: 100%;
+  font-weight: 400;
   font-size: 20px;
   line-height: 32px;
 }
 
-hr {
-  width: 32px;
-  height: 3px;
-  background-color: #D8D8D8;
-  border: 0;
+.hero__profile-img {
+  border-radius: 50%;
+  display: block;
+  width: 96px;
+  height: 96px;
 }
 
-.home .hero hr {
+.hero hr {
   margin: 16px 0 48px 0;
 }
 
-.about hr {
-  margin: 16px 0 32px 0;
+@media only screen and (min-width: 768px) {
+  .hero__heading {
+    width: 680px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .hero hr {
+    margin-bottom: 72px;
+  }
 }
+
+/**
+ * #Projects List
+ */
 
 .works h2 {
   text-transform: uppercase;
@@ -152,34 +248,13 @@ hr {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-  margin: 0 0 16px 0;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
-.about main {
-  margin-top: 104px;
-}
-
-.about main h1 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-}
-
-.about .portrait img {
-  width: 100%;
-  height: auto;
-}
-
-.byline,
-.about main h2 {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-}
-
-.byline {
-  margin-top: 8px;
-}
+/**
+ * #Employment History
+ */
 
 .employment-history {
   list-style-type: none;
@@ -195,7 +270,11 @@ hr {
   font-weight: 500;
 }
 
-footer {
+/**
+ * #Footer
+ */
+
+.footer {
   grid-area: footer;
   border-top: 1px solid #C2C2C2;
   display: flex;
@@ -204,99 +283,40 @@ footer {
   flex-wrap: wrap;
 }
 
-footer ul {
+.footer__copyright {
+  width: 100%;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.footer__link-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-footer p {
-  width: 100%;
+.footer__link {
   font-size: 16px;
-}
-
-footer ul li {
-  padding-bottom: 24px;
+  line-height: 24px;
 }
 
 @media only screen and (min-width: 768px) {
-  .about article {
-    grid-template-columns: 33% 1fr;
-    grid-template-areas:
-      "page-title page-title"
-      "portrait biography";
-  }
-
-  .about .portrait img {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero h1 {
-    width: 680px;
-    font-size: 24px;
-    line-height: 40px;
-  }
-
-  .hero hr {
-    margin-bottom: 72px;
-  }
-
-  .about hr {
-    margin: 48px 0 56px 0;
-  }
-
-  .about main h1 {
-    font-size: 40px;
-    line-height: 56px;
-  }
-
-  .byline,
-  .about main h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .byline {
-    margin-top: 16px;
-  }
-
-  p, main {
-    font-size: 20px;
-    line-height: 32px;
-  }
-
-  p + h2 {
-    margin-top: 64px;
-  }
-
-  footer {
+  .footer {
     flex-wrap: nowrap;
   }
 
-  footer p {
+  .footer__copyright {
     width: auto;
   }
 
-  footer ul li {
+  .footer__link {
     float: left;
-    padding: 0;
-  }
-
-  footer ul li a {
-    display: inline-block;
     padding: 24px;
-  }
-}
-
-@media only screen and (min-width: 1180px) {
-  .about article {
-    grid-template-columns: auto 1fr;
-    grid-column-gap: 56px;
+    margin: 0;
   }
 
-  .about .portrait img {
-    width: 444px;
-    height: 616px;
+  .footer__link a {
+    display: inline-block;
   }
 }
