@@ -9,6 +9,8 @@
 body {
   font-family: 'Roboto';
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 p, li {
@@ -70,13 +72,98 @@ a {
   #OBJECTS
 \*------------------------------------*/
 
-.page {
+/*.page {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1180px) 1fr;
   grid-template-rows: 1fr auto;
   grid-template-areas:
     ". main ."
     ". footer .";
+}*/
+
+.grid {
+  display: grid;
+  grid-template-columns:  [full-start] minmax(20px, 1fr)
+                          [wide-start] minmax(auto, 200px)
+                          [narrow-start] minmax(auto, 780px) [narrow-end]
+                          minmax(auto, 200px) [wide-end]
+                          minmax(20px, 1fr) [full-end];
+}
+
+.grid__item--full {
+  grid-column: full;
+}
+
+.grid__item--wide-media {
+  grid-column: full;
+}
+
+.grid__item--wide-body {
+  grid-column: wide;
+}
+
+.grid__item--narrow {
+  grid-column: wide;
+}
+
+/* This needs a better name than 'special-grid'
+  Also need to name the grid track lines for readability */
+
+.special-grid {
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+}
+
+.special-grid__item {
+  grid-column: 1 / -1;
+}
+
+.special-grid__item--body,
+.special-grid__item--full {
+  padding: 0 20px;
+}
+
+.page__container {
+  padding-top: 104px;
+  flex: 1 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid__item--wide-media {
+    grid-column: wide;
+  }
+
+  .grid__item--narrow {
+    grid-column: narrow;
+  }
+
+  .special-grid__item--media {
+    grid-column: 1;
+  }
+
+  .special-grid__item--body {
+    grid-column: 2;
+    padding: 0;
+  }
+
+  .special-grid__item--full {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .special-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/*.page__container {
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 1180px) minmax(20px, 1fr);
+}
+
+.page__container > * {
+  grid-column: 2;
 }
 
 .page--about main {
@@ -85,13 +172,13 @@ a {
 
 main {
   grid-area: main;
-}
+}*/
 
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
 
-.about-article {
+/*.about-article {
   display: grid;
   grid-column-gap: 32px;
   grid-template-columns: auto;
@@ -112,6 +199,11 @@ main {
 
 .about-article__biography {
   grid-area: biography;
+}*/
+
+.about-article {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .about-article hr {
@@ -121,6 +213,7 @@ main {
 .about-article__portrait img {
   width: 100%;
   height: auto;
+  margin-bottom: 32px;
 }
 
 .byline {
@@ -128,11 +221,15 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
-  .about-article {
+  /*.about-article {
     grid-template-columns: 33% 1fr;
     grid-template-areas:
       "page-title page-title"
       "portrait biography";
+  }*/
+
+  .about-article {
+    padding: 0 20px;
   }
 
   .about-article__portrait img {
@@ -150,10 +247,10 @@ main {
 }
 
 @media only screen and (min-width: 1180px) {
-  .about-article {
+  /*.about-article {
     grid-template-columns: auto 1fr;
     grid-column-gap: 56px;
-  }
+  }*/
 
   .about-article__portrait img {
     width: 444px;
@@ -168,11 +265,12 @@ main {
 .header {
   /* header is not treated as part of page grid because of position: fixed */
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 1180px) 1fr;
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 1180px) minmax(20px, 1fr);
   border-bottom: 1px solid #EFEFEF;
   background-color: #FFFFFF;
   position: fixed;
   width: 100%;
+  z-index: 10000;
 }
 
 .header__content {
@@ -206,10 +304,6 @@ main {
 /**
  * #Hero
  */
-
-.hero {
-  margin-top: 128px;
-}
 
 .hero__heading {
   margin-top: 36px;
@@ -245,10 +339,6 @@ main {
 /**
  * #Projects List
  */
-
-.works {
-  margin-bottom: 128px;
-}
 
 .works__heading {
   text-transform: uppercase;
@@ -387,7 +477,14 @@ main {
  */
 
 .footer {
-  grid-area: footer;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 1180px) minmax(20px, 1fr);
+  margin-top: 48px;
+}
+
+.footer__content {
+  grid-column: 2;
   border-top: 1px solid #C2C2C2;
   display: flex;
   justify-content: space-between;
@@ -411,10 +508,15 @@ main {
 .footer__link {
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 16px;
 }
 
 @media only screen and (min-width: 768px) {
   .footer {
+    margin-top: 96px;
+  }
+
+  .footer__content {
     flex-wrap: nowrap;
   }
 

@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 </head>
-<body class="page page--about about">
+<body class="page page--about">
   <header class="header">
     <div class="header__content">
       <a class="header__logotype" href="index.html">John Ranola</a>
@@ -18,17 +18,17 @@
       </nav>
     </div>
   </header>
-  <main>
-    <article class="about-article">
-      <div class="about-article__title">
+  <main class="page__container">
+    <article class="about-article grid special-grid">
+      <div class="about-article__title special-grid__item special-grid__item--full">
         <h1>John Ranola</h1>
         <div class="byline">Product Designer</div>
         <hr />
       </div>
-      <div class="about-article__portrait">
+      <div class="about-article__portrait special-grid__item special-grid__item--media">
         <img src="img/john-about-portrait.jpg" />
       </div>
-      <div class="about-article__biography">
+      <div class="about-article__biography special-grid__item special-grid__item--body">
         <p>Hey there, I’m a product designer born, raised and currently living in Sydney, Australia. Right now, I’m helping to create better digital experiences for small business customers of <a href="https://www.commbank.com.au">Australia’s biggest bank.</a></p>
         <p>I believe shipping great experiences needs a few things: a drive to build what’s right for users, influence and rapport with key decision makers and good collaboration with the cross-disciplinary teams that build them.</p>
         <p>Prior to working in design, I was a front-end engineer using technologies such as Less, Sass and Angular.</p>
@@ -55,11 +55,13 @@
     </article>
   </main>
   <footer class="footer">
-    <p class="footer__copyright">© 2018 John Ranola. Designed and built by me.</p>
-    <ul class="footer__link-list">
-      <li class="footer__link"><a href="mailto:john@ranola.net">john@ranola.net</a></li>
-      <li class="footer__link"><a href="https://www.linkedin.com/in/johnranola/">LinkedIn</a></li>
-    </ul>
+    <div class="footer__content">
+      <p class="footer__copyright">© 2018 John Ranola. Designed and built by me.</p>
+      <ul class="footer__link-list">
+        <li class="footer__link"><a href="mailto:john@ranola.net">john@ranola.net</a></li>
+        <li class="footer__link"><a href="https://www.linkedin.com/in/johnranola/">LinkedIn</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
