@@ -232,6 +232,7 @@ main {
 
 .byline {
   margin-top: 8px;
+  margin-bottom: 48px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -564,7 +565,7 @@ main {
  }
 
 .lead:last-child {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .cba-logo {
@@ -577,6 +578,7 @@ main {
 .summary {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .summary__heading {
@@ -601,7 +603,7 @@ main {
   }
 
   .lead:last-child {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   .cba-logo {
@@ -613,6 +615,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 40px;
   }
 
   .summary__heading {
@@ -679,6 +682,7 @@ main {
   font-size: 16px;
   min-width: 150px;
   padding: 0 30px;
+  margin-bottom: 32px;
   color: #333333;
   text-align: center;
   text-decoration: none;
@@ -700,6 +704,24 @@ main {
 .article-separator {
   margin-top: 32px;
   margin-bottom: 32px;
+}
+
+/**
+ * #Video Mockup
+ */
+
+.mockup {
+  display: flex;
+  justify-content: center;
+  background-color: #F7C2AB;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 576px) {
+  .mockup__video {
+    width: 375px;
+    height: 664px;
+  }
 }
 
 /**
