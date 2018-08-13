@@ -2,6 +2,8 @@
   #BASE
 \*------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Domine:700');
+
 * {
   box-sizing: border-box;
 }
@@ -271,6 +273,14 @@ main {
 }
 
 /**
+ * #Text Styles
+ */
+
+.content-link:hover {
+  background-color: #F7F4AD;
+}
+
+/**
  * #Header
  */
 
@@ -329,9 +339,17 @@ main {
 }
 
 .header__logotype {
-  font-weight: 800;
+  font-family: 'Domine', serif;
+  font-weight: 700;
   font-size: 20px;
   color: #5F5F5F;
+  border: 0;
+  padding: 12px 0;
+  transition: all 0.2s;
+}
+
+.header__logotype:hover {
+  color: #A8A8A8;
 }
 
 /**
