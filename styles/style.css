@@ -56,6 +56,10 @@ a {
   text-decoration: none;
 }
 
+blockquote {
+  font-style: italic;
+}
+
 @media only screen and (min-width: 768px) {
   p, li {
     font-size: 20px;
@@ -530,7 +534,8 @@ main {
   margin-bottom: 20px;
 }
 
-.cba-logo {
+.cba-logo,
+.sg-logo {
   height: 32px;
   width: 32px;
   vertical-align: top;
@@ -568,7 +573,8 @@ main {
     margin-bottom: 40px;
   }
 
-  .cba-logo {
+  .cba-logo,
+  .sg-logo {
     height: 40px;
     width: 40px;
   }
