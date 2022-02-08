@@ -433,6 +433,10 @@ main {
   background-color: #96D6CE;
 }
 
+.card--7geese-cs .card__top {
+  background-color: #FCE2D2;
+}
+
 .card--car-insurance .card__image {
   width: 154px;
 }
@@ -443,6 +447,10 @@ main {
 
 .card--rtp .card__image {
   width: 154px;
+}
+
+.card--7geese-cs .card__image {
+  width: 316px;
 }
 
 .card__body {
