@@ -339,7 +339,7 @@ main {
 }
 
 .hero hr {
-  margin: 16px 0 48px 0;
+  margin: 32px 0 48px 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -350,7 +350,7 @@ main {
   }
 
   .hero hr {
-    margin-bottom: 72px;
+    margin: 48px 0 72px 0;
   }
 }
 
