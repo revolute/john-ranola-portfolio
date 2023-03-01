@@ -137,6 +137,11 @@ blockquote {
   flex: 1 0 auto;
 }
 
+/* Define rows for home page grid */
+.page--home .grid {
+  grid-template-rows: auto 1fr;
+}
+
 @media only screen and (min-width: 768px) {
   .grid__item--wide-media {
     grid-column: wide;
