@@ -86,6 +86,10 @@ blockquote {
   }
 }
 
+figure {
+  margin: 0;
+}
+
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
@@ -447,6 +451,10 @@ main {
   background-color: #FCE2D2;
 }
 
+.card--7geese-reviews .card__top {
+  background-color: #E7E8FF;
+}
+
 .card--car-insurance .card__image {
   width: 154px;
 }
@@ -461,6 +469,10 @@ main {
 
 .card--7geese-cs .card__image {
   width: 316px;
+}
+
+.card--7geese-reviews .card__image {
+  width: 330px;
 }
 
 .card__body {
@@ -585,6 +597,25 @@ main {
   margin-bottom: 8px;
 }
 
+/* Alternative 2-column summary layout */
+.summary--half-stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.summary--half-stack__column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.summary--half-stack__item {
+  width: 100%;
+}
+
 .case-study-image {
   width: 100%;
   height: auto;
@@ -618,6 +649,18 @@ main {
   }
 
   .summary__item {
+    width: 32%;
+  }
+
+  .summary--half-stack {
+    margin-top: 40px;
+  }
+  
+  .summary--half-stack__column {
+    width: 66%;
+  }
+
+  .summary--half-stack__column--lead {
     width: 32%;
   }
 }
