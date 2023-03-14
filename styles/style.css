@@ -347,6 +347,11 @@ main {
   margin: 32px 0 48px 0;
 }
 
+.button.hero__button {
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
+
 @media only screen and (min-width: 768px) {
   .hero__line {
     width: 100%;
