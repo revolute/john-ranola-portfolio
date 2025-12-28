@@ -60,6 +60,10 @@ blockquote {
   font-style: italic;
 }
 
+figure {
+  margin: 0;
+}
+
 @media only screen and (min-width: 768px) {
   p, li {
     font-size: 20px;
@@ -84,10 +88,6 @@ blockquote {
     font-size: 24px;
     line-height: 32px;
   }
-}
-
-figure {
-  margin: 0;
 }
 
 /*------------------------------------*\
@@ -455,6 +455,10 @@ main {
   background-color: #E7E8FF;
 }
 
+.card--cba-merchant-closure .card__top {
+  background-color: #F7F4AD;
+}
+
 .card--car-insurance .card__image {
   width: 154px;
 }
@@ -473,6 +477,10 @@ main {
 
 .card--7geese-reviews .card__image {
   width: 330px;
+}
+
+.card--cba-merchant-closure .card__image {
+  width: 154px;
 }
 
 .card__body {
@@ -527,6 +535,11 @@ main {
 }
 
 @media only screen and (min-width: 1180px) {
+  .works__cards {
+    justify-content: start;
+    column-gap: 23px;
+  }
+  
   .card {
     width: 32%;
   }
@@ -621,6 +634,13 @@ main {
   height: auto;
 }
 
+.case-study-image__caption {
+  margin: 16px 20px 0 20px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5F5F5F;
+}
+
 @media only screen and (min-width: 768px) {
   .lead {
     font-size: 24px;
@@ -662,6 +682,11 @@ main {
 
   .summary--half-stack__column--lead {
     width: 32%;
+  }
+
+  .case-study-image__caption {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
