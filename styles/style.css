@@ -455,6 +455,10 @@ main {
   background-color: #E7E8FF;
 }
 
+.card--cba-merchant-closure .card__top {
+  background-color: #F7F4AD;
+}
+
 .card--car-insurance .card__image {
   width: 154px;
 }
@@ -473,6 +477,10 @@ main {
 
 .card--7geese-reviews .card__image {
   width: 330px;
+}
+
+.card--cba-merchant-closure .card__image {
+  width: 154px;
 }
 
 .card__body {
@@ -527,6 +535,11 @@ main {
 }
 
 @media only screen and (min-width: 1180px) {
+  .works__cards {
+    justify-content: start;
+    column-gap: 23px;
+  }
+  
   .card {
     width: 32%;
   }
